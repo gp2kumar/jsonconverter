@@ -1,2 +1,5 @@
 venv/
-idea/
+.idea/
+dist/
+jsonConverter.egg-info/
+build/
