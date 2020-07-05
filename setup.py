@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="JsonConverter", # Replace with your own username
-    version="0.0.1",
+    name="jsonConverter",
+    version="0.0.5",
     author="prgarre",
-    author_email="garrepradeepkumar.com",
+    author_email="garrepradeepkumar@gmail.com",
     description="Json converter",
     long_description=long_description,
     long_description_content_type="text/markdown",
