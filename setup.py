@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="jsonConverter",
-    version="0.0.5",
+    version="0.0.7",
     author="prgarre",
     author_email="garrepradeepkumar@gmail.com",
     description="Json converter",
@@ -20,4 +20,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.5',
+    package_data={'': ['tests']},
+    include_package_data=True,
+    install_requires=["jinja2", "beautifulsoup4"]
 )

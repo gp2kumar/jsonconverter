@@ -1,4 +1,5 @@
 from jinja2 import Template
+from jsonConverter.errors import EmptyJson
 
 
 class HtmlTable:
@@ -21,8 +22,8 @@ class HtmlTable:
     """
 
     def __new__(cls, *args, **kwargs):
-        if len(kwargs["json_data"]) == 0:
-            raise Exception("Can not make an empty HTML table")
+        if "json_data" not in kwargs or len(kwargs["json_data"]) == 0:
+            raise EmptyJson
         return super(HtmlTable, cls).__new__(cls)
 
     def __init__(self,
@@ -47,9 +48,4 @@ class HtmlTable:
                                               header_text_color=self.header_text_color,
                                               header_font_size=self.header_font_size,
                                               headers=list(self.data[0].keys()),
-                                              data =self.data)
-
-
-# json_data = [{"test_1": "val_1", "test_2": "val_2", "test_3": "val_3",  "test_4": "val_8"},
-#                      {"test_1": "val_4", "test_2": "val_5", "test_3": "val_6", "test_4": "val_7"}]
-# print(HtmlTable(json_data=json_data))
+                                              data=self.data)
