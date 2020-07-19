@@ -13,13 +13,13 @@ from jsonConverter import jsonConverter
 json_converter = jsonConverter(ANY_JSON)
 </pre>
 
-# Invoke jsonConverter from json file
+## Invoke jsonConverter from json file
 <pre>
 from jsonConverter import jsonConverter
 json_converter = jsonConverter.from_file(json_path)
 </pre>
 
-# Invoke jsonConverter from json string
+## Invoke jsonConverter from json string
 <pre>
 from jsonConverter import jsonConverter
 json_converter = jsonConverter.from_string(json_str)
@@ -32,7 +32,7 @@ json_converter = jsonConverter(ANY_JSON)
 json_converter.get_html_table()
 </pre>
 
-#How to change default attributes for html table
+## How to change default attributes for html table
 Below attributes are exposed. So, pass these parameters to get_html_table method. 
 
 <pre>
