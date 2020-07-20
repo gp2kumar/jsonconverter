@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="jsonConverter",
-    version="1.0.0",
+    version="1.0.1",
     author="prgarre",
     author_email="garrepradeepkumar@gmail.com",
     description="Json converter",
