@@ -7,14 +7,14 @@ class HtmlTable:
     <table style="border-left: #{{table_border_color}} 1px solid;border-right: #{{table_border_color}} 1px solid;border-bottom: #{{table_border_color}} 1px solid;border-collapse: collapse;">
         <tr style="border-top: #{{table_border_color}} 1px solid;height:35px">
         {% for header in headers[:-1] %}
-            <th style="border-right: #{{header_cell_border_color}} 1px solid;padding-left:5px;padding-right:5px;text-align:center;background-color:#{{header_background_color}}; color:#{{header_text_color}}; font-size:{{header_font_size}}px;">{{header}}</th>
+            <th style="border-right: #{{header_cell_border_color}} 1px solid;padding-left:5px;vertical-align: center;padding-right:5px;text-align:center;background-color:#{{header_background_color}}; color:#{{header_text_color}}; font-size:{{header_font_size}}px;">{{header}}</th>
         {% endfor %}    
-            <th style="padding-left:5px;padding-right:5px;text-align:center;background-color:#{{header_background_color}}; color:#{{header_text_color}}; font-size:{{header_font_size}}px;">{{headers[-1]}}</th>
+            <th style="padding-left:5px;padding-right:5px;vertical-align: center;text-align:center;background-color:#{{header_background_color}}; color:#{{header_text_color}}; font-size:{{header_font_size}}px;">{{headers[-1]}}</th>
         </tr>
         {% for row in data %}
         <tr style="border-top: #{{table_border_color}} 1px solid;height:35px">
             {% for key in headers %}
-            <td style="border-right: #{{table_border_color}} 1px solid;padding-left:5px;padding-right:5px;text-align:center;">{{row.get(key) }}</td>
+            <td style="border-right: #{{table_border_color}} 1px solid;padding-left:5px;vertical-align: center;padding-right:5px;text-align:center;">{{row.get(key) }}</td>
             {% endfor %}
         </tr>
         {% endfor %}        
