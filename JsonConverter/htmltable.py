@@ -28,6 +28,7 @@ class HtmlTable:
 
     def __init__(self,
                  json_data: list,
+                 headers_list: list,
                  table_border_color: str = "E1EcF4",
                  header_cell_border_color: str = "ccc",
                  header_background_color: str = "E1EcF4",
@@ -39,13 +40,17 @@ class HtmlTable:
         self.header_background_color = header_background_color
         self.header_text_color = header_text_color
         self.header_font_size = header_font_size
+        self.headers_list = headers_list
         self.data = json_data
 
     def __str__(self):
+        if not self.headers_list:
+            self.headers_list = list(self.data[0].keys())
+
         return Template(self.template).render(table_border_color=self.table_border_color,
                                               header_cell_border_color=self.header_cell_border_color,
                                               header_background_color=self.header_background_color,
                                               header_text_color=self.header_text_color,
                                               header_font_size=self.header_font_size,
-                                              headers=list(self.data[0].keys()),
+                                              headers=self.headers_list,
                                               data=self.data)
